@@ -6,6 +6,8 @@ import java.util.Map;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @CrossOrigin("*")
 @RestController
@@ -21,5 +23,10 @@ public class RestDemo {
 		map.put("uno", 1);
 		map.put("dos", 2);
 		return map;
+	}
+
+	@PostMapping("registrar")
+	public Map<String, Object> registrar(@RequestBody Map<String, Object> nuevo) {
+		return nuevo;
 	}
 }
